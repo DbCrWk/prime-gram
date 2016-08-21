@@ -1,0 +1,15 @@
+Essentially, each letter and the hyphen character (since it appears in the canonical list provided), is mapped to a prime number (specifically, the first 27 prime numbers). For each word, a number, which is the product of all of its letters, is computed. This number is invariant under the order of letters, but all words with the same combination of letters (but perhaps a different permutation) will have the same number. This is guaranteed by the fundamental theorem of arithmetic--the unique prime factorization theorem. Since all numbers have a unique prime factorization and multiplication in the whole numbers is commutative, we know that any number associated with a word in the way described above has to have a specific multiplicity and combination of letters (i.e. prime numbers).
+
+Included is the solution itself, an automated tester, an interactive tester, and a list of words in the English language. Since it wasn't listed in the spec, there is no wrapper class to take in file redirects from the command line.
+
+There are four necessary files:
+
+anagram.py--contains the actual components necessary for generating lists of anagrams. It included a preprocessor that computes the "number" for every word contained in a file that has a list of words. The main function in anagram.py contains anagram() which takes in two arguments: the first is a list of words, and the second (optional) is the name of the file that contains the list of words in the English language to check.
+
+interactive_tester.py--contains code to perform interactive testing. To compile, simply run python interactive_tester.py and it will start a command line interactive tester.
+
+automated_tester.py--contains the automated tester for anagram.py. It runs through some very simple test cases (just five so far as detailed in the file). Simply run python automated_tester.py to launch it. It uses the built-in unittest framework to run unit tests.
+
+words.txt--contains the canonical words in the English language. The code will default to this if no filename is specified.
+
+Time spent: 97 minutes
